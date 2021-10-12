@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class WaterCollisionScript : MonoBehaviour
 {
@@ -20,8 +21,9 @@ public class WaterCollisionScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
+            GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.m_cursorIsLocked = false;
             SceneManager.LoadScene("GameLose");
         }
     }
