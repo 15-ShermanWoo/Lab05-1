@@ -18,12 +18,12 @@ public class CollisionScript : MonoBehaviour
     {
         CoinCounter.text = "Score: " + CoinScore;
     }
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Coin"))
+        if (other.gameObject.CompareTag("Coin"))
         {
             CoinScore += 10;
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             CoinCounter.text = "Score: " + CoinScore;
         }
     }
