@@ -9,7 +9,7 @@ public class CoinCollisionScript : MonoBehaviour
     private float scorevalue;
     public float totalcoins;
 
-    public int CoinScore;
+     int CoinScore;
     
     public float timeleft;
 
@@ -31,7 +31,7 @@ public class CoinCollisionScript : MonoBehaviour
         timeleft -= Time.deltaTime;
         timeRemaining = Mathf.FloorToInt(timeleft % 60);
         TimerText.text = "Timer: " + timeRemaining.ToString();
-        if (scorevalue == totalcoins)
+        if (CoinScore == totalcoins)
         {
             if (timeleft <= TimerValue)
             {
@@ -43,7 +43,7 @@ public class CoinCollisionScript : MonoBehaviour
             SceneManager.LoadScene("GameLose");
         }
         CoinCounter.text = "Score: " + CoinScore;
-        if (CoinScore >= 100)
+        if (CoinScore >= 60)
         {
             SceneManager.LoadScene("GameWin");
         }
