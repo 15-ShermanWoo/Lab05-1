@@ -48,6 +48,8 @@ public class CoinCollisionScript : MonoBehaviour
         }
         else if (timeleft <= 0)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             SceneManager.LoadScene("GameLose");
         }
         //Score Text
