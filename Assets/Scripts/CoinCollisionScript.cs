@@ -43,6 +43,8 @@ public class CoinCollisionScript : MonoBehaviour
         {
             if (timeleft <= TimerValue)
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 SceneManager.LoadScene("GameWin");
             }
         }
@@ -61,6 +63,7 @@ public class CoinCollisionScript : MonoBehaviour
             Cursor.visible = true;
             SceneManager.LoadScene("GameWin");
         }
+        
 
         if (Input.GetKeyDown(KeyCode.F1)) 
         {
@@ -79,4 +82,5 @@ public class CoinCollisionScript : MonoBehaviour
             CoinCounter.text = "Score: " + CoinScore;
         }
     }
+   
 }
