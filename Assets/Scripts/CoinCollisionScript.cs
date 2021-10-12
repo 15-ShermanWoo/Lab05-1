@@ -28,6 +28,7 @@ public class CoinCollisionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Timer 
         timeleft -= Time.deltaTime;
         timeRemaining = Mathf.FloorToInt(timeleft % 60);
         TimerText.text = "Timer: " + timeRemaining.ToString();
@@ -42,7 +43,9 @@ public class CoinCollisionScript : MonoBehaviour
         {
             SceneManager.LoadScene("GameLose");
         }
+        //Score Text
         CoinCounter.text = "Score: " + CoinScore;
+        //Win condition
         if (CoinScore >= 60)
         {
             SceneManager.LoadScene("GameWin");
@@ -50,6 +53,7 @@ public class CoinCollisionScript : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
+        //Checking for collision with Coin
         if (other.gameObject.CompareTag("Coin"))
         {
             CoinScore += 10;
