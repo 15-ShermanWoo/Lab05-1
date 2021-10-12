@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 332081456}
   - component: {fileID: 332081455}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Lose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -19.4, y: 58.2}
-  m_SizeDelta: {x: 160, y: 50}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &332081455
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Win Liao la
+  m_Text: Lose Liao la
 --- !u!222 &332081456
 CanvasRenderer:
   m_ObjectHideFlags: 0
