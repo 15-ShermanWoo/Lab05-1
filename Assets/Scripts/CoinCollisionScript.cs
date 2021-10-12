@@ -21,9 +21,13 @@ public class CoinCollisionScript : MonoBehaviour
     private float TimerValue;
 
     public ParticleSystem CoinParticle;
+    AudioSource audioSource;
+
+    public AudioSource Collect;
     // Start is called before the first frame update
     void Start()
     {
+        Collect.GetComponent<AudioSource>();
         CoinParticle.Stop();
         CoinParticle.GetComponent<ParticleSystem>();
     }
@@ -59,6 +63,7 @@ public class CoinCollisionScript : MonoBehaviour
         //Checking for collision with Coin
         if (other.gameObject.CompareTag("Coin"))
         {
+            Collect.Play();
             CoinParticle.Play();
             CoinScore += 10;
             Destroy(other.gameObject);
