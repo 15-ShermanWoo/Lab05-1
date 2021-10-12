@@ -40,7 +40,7 @@ public class CoinCollisionScript : MonoBehaviour
         timeRemaining = Mathf.FloorToInt(timeleft % 60);
         TimerText.text = "Timer: " + timeRemaining.ToString();
         if (CoinScore == totalcoins)
-        {
+        {   
             if (timeleft <= TimerValue)
             {
                 Cursor.lockState = CursorLockMode.None;
