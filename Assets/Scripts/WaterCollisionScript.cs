@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaterCollisionScript : MonoBehaviour
 {
@@ -14,5 +15,12 @@ public class WaterCollisionScript : MonoBehaviour
     void Update()
     {
         
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("GameLose");
+        }
     }
 }

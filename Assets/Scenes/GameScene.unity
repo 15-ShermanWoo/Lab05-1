@@ -2777,6 +2777,7 @@ GameObject:
   - component: {fileID: 1369579783}
   - component: {fileID: 1361889831}
   - component: {fileID: 1154888796}
+  - component: {fileID: 1367392200}
   m_Layer: 4
   m_Name: WaterProDaytime
   m_TagString: Water
@@ -2784,6 +2785,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!114 &1367392200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367392199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d03b7964f3c534d98163a21814cd53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1367811047
 Transform:
   m_ObjectHideFlags: 0
