@@ -55,7 +55,14 @@ public class CoinCollisionScript : MonoBehaviour
         //Win condition
         if (CoinScore >= 70)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             SceneManager.LoadScene("GameWin");
+        }
+
+        if (Input.GetKeyDown(KeyCode.F1)) 
+        {
+            CoinScore = 100;
         }
     }
     public void OnTriggerEnter(Collider other)
