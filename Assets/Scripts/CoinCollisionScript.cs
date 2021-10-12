@@ -6,8 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class CoinCollisionScript : MonoBehaviour
 {
+    private float scorevalue;
+    public float totalcoins;
+
     public int CoinScore;
+    
+    public float timeleft;
+
+    public int timeRemaining;
+
     public Text CoinCounter;
+    public Text TimerText;
+
+    private float TimerValue;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +28,20 @@ public class CoinCollisionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeleft -= Time.deltaTime;
+        timeRemaining = Mathf.FloorToInt(timeleft % 60);
+        TimerText.text = "Timer: " + timeRemaining.ToString();
+        if (scorevalue == totalcoins)
+        {
+            if (timeleft <= TimerValue)
+            {
+                SceneManager.LoadScene("GameWin");
+            }
+        }
+        else if (timeleft <= 0)
+        {
+            SceneManager.LoadScene("GameLose");
+        }
         CoinCounter.text = "Score: " + CoinScore;
         if (CoinScore >= 100)
         {
