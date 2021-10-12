@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class CollisionScript : MonoBehaviour
+public class CoinCollisionScript : MonoBehaviour
 {
     public int CoinScore;
     public Text CoinCounter;
@@ -17,6 +18,10 @@ public class CollisionScript : MonoBehaviour
     void Update()
     {
         CoinCounter.text = "Score: " + CoinScore;
+        if (CoinScore >= 100)
+        {
+            SceneManager.LoadScene("GameWin");
+        }
     }
     public void OnTriggerEnter(Collider other)
     {
