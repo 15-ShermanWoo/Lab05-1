@@ -19,10 +19,13 @@ public class CoinCollisionScript : MonoBehaviour
     public Text TimerText;
 
     private float TimerValue;
+
+    public ParticleSystem CoinParticle;
     // Start is called before the first frame update
     void Start()
     {
-        
+        CoinParticle.Stop();
+        CoinParticle.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -46,7 +49,7 @@ public class CoinCollisionScript : MonoBehaviour
         //Score Text
         CoinCounter.text = "Score: " + CoinScore;
         //Win condition
-        if (CoinScore >= 60)
+        if (CoinScore >= 70)
         {
             SceneManager.LoadScene("GameWin");
         }
@@ -56,6 +59,7 @@ public class CoinCollisionScript : MonoBehaviour
         //Checking for collision with Coin
         if (other.gameObject.CompareTag("Coin"))
         {
+            CoinParticle.Play();
             CoinScore += 10;
             Destroy(other.gameObject);
             CoinCounter.text = "Score: " + CoinScore;
